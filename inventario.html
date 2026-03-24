@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inventario de dispositivos</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/inventario.css" />
+<link rel="stylesheet" href="css/tailwind.css" />
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<h1>Inventario de dispositivos de red</h1>
+<p>Gestión de activos y direccionamiento lógico</p>
+
+</header>
+
+
+
+<div class="container">
+
+
+<nav class="sidebar">
+
+<ul>
+
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="topologia.html">Topología interactiva</a></li>
+<li><a href="inventario.html" class="active">Inventario de equipos</a></li>
+<li><a href="soporte.html">Soporte técnico</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+
+</ul>
+
+</nav>
+
+
+
+<main class="main-content">
+
+
+<section>
+
+<h2>Listado técnico de equipos</h2>
+
+<p>
+Los datos mostrados están vinculados
+al archivo XML del sistema.
+</p>
+
+<a href="xml/inventario.xml" class="btn">Ver archivo XML</a>
+
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Status</th>
+<th>Nombre</th>
+<th>Dirección IP</th>
+<th>Dirección MAC</th>
+<th>Tipo</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td class="status online">Online</td>
+<td>Router-Core-01</td>
+<td>192.168.1.1</td>
+<td>00:1A:2B:3C:4D:5E</td>
+<td>Router</td>
+
+</tr>
+
+
+<tr>
+
+<td class="status offline">Offline</td>
+<td>Switch-piso1</td>
+<td>192.168.1.2</td>
+<td>00:F1:E2:D3:C4:B5</td>
+<td>Switch L2</td>
+
+</tr>
+
+
+<tr>
+
+<td class="status online">Online</td>
+<td>Server-DB</td>
+<td>192.168.1.10</td>
+<td>AA:BB:CC:DD:EE:FF</td>
+<td>Servidor</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+
+
+<section>
+
+<h2>¿Qué significa cada campo?</h2>
+
+<ul>
+
+<li>Status: indica si el dispositivo responde a verificaciones.</li>
+
+<li>IP: dirección lógica para enrutar tráfico.</li>
+
+<li>MAC: identificador físico de la interfaz.</li>
+
+<li>Tipo: rol del equipo en la red.</li>
+
+</ul>
+
+</section>
+
+
+</main>
+
+
+
+<aside class="side-panel">
+
+<h3>Acciones rápidas</h3>
+
+<a href="xml/inventario.xml" class="btn">Abrir XML</a>
+<button>Actualizar estatus</button>
+
+<h3>Tips de validación</h3>
+
+<p>Verifica IP y gateway en la misma subred.</p>
+
+</aside>
+
+
+</div>
+
+
+
+ <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-title">Sistema de Monitoreo de Red</p>
+            <p>Proyecto académico - Programación Web</p>
+            <p>Instituto Tecnológico de Morelia</p>
+            <p>© 2026 Bryan Mendoza. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

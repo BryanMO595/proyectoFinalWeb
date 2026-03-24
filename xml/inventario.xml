@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventario SYSTEM "inventario.dtd">
+
+<!--
+     Inventario de dispositivos de red
+     Proyecto: Plataforma Web de Monitoreo y Gestión Visual para Redes LAN
+     Autor: Bryan Mendoza
+-->
+
+<inventario>
+    <dispositivo>
+        <id>1</id>
+        <nombre>Router-Core-01</nombre>
+        <ip>192.168.1.1</ip>
+        <mac>00:1A:2B:3C:4D:5E</mac>
+        <tipo>Router</tipo>
+        <estado>Online</estado>
+        <ubicacion>Cuarto de comunicaciones</ubicacion>
+    </dispositivo>
+    
+    <dispositivo>
+        <id>2</id>
+        <nombre>Switch-Piso1</nombre>
+        <ip>192.168.1.2</ip>
+        <mac>00:F1:E2:D3:C4:B5</mac>
+        <tipo>Switch L2</tipo>
+        <estado>Offline</estado>
+        <ubicacion>Laboratorio de Sistemas</ubicacion>
+    </dispositivo>
+    
+    <dispositivo>
+        <id>3</id>
+        <nombre>Server-DB</nombre>
+        <ip>192.168.1.10</ip>
+        <mac>AA:BB:CC:DD:EE:FF</mac>
+        <tipo>Servidor</tipo>
+        <estado>Online</estado>
+        <ubicacion>Centro de datos</ubicacion>
+    </dispositivo>
+    
+    <dispositivo>
+        <id>4</id>
+        <nombre>PC-Lab-01</nombre>
+        <ip>192.168.1.20</ip>
+        <mac>10:20:30:40:50:60</mac>
+        <tipo>PC</tipo>
+        <estado>Online</estado>
+        <ubicacion>Laboratorio de Redes</ubicacion>
+    </dispositivo>
+    
+    <dispositivo>
+        <id>5</id>
+        <nombre>PC-Lab-02</nombre>
+        <ip>192.168.1.21</ip>
+        <mac>11:22:33:44:55:66</mac>
+        <tipo>PC</tipo>
+        <estado>Online</estado>
+        <ubicacion>Laboratorio de Redes</ubicacion>
+    </dispositivo>
+    
+    <dispositivo>
+        <id>6</id>
+        <nombre>AccessPoint-01</nombre>
+        <ip>192.168.1.30</ip>
+        <mac>AB:CD:EF:12:34:56</mac>
+        <tipo>Access Point</tipo>
+        <estado>Online</estado>
+        <ubicacion>Edificio A</ubicacion>
+    </dispositivo>
+</inventario>

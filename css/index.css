@@ -1,0 +1,102 @@
+.dashboard h2,
+.quick-stats h2,
+.network-status h2,
+.alerts h2,
+.resources h2 {
+    margin-bottom: 12px;
+}
+
+.mini-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.mini-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.mini-card:hover {
+    transform: translateY(-2px);
+    background-color: var(--bg-hover);
+}
+
+.mini-card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--text-soft);
+}
+
+.mini-card p {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.network-status {
+    margin-top: 10px;
+}
+
+.status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+}
+
+.device-name {
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+.resources .card ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: var(--text-soft);
+}
+
+.resources .card li {
+    margin-bottom: 8px;
+}
+
+.side-panel .btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1100px) {
+    .mini-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mini-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .status-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

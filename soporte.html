@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Soporte técnico</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/soporte.css" />
+<link rel="stylesheet" href="css/tailwind.css" />
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<h1>Soporte técnico y reporte de incidencias</h1>
+
+<p>Centro de atención para fallos de infraestructura</p>
+
+</header>
+
+
+
+<div class="container">
+
+
+<nav class="sidebar">
+
+<ul>
+
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="topologia.html">Topología interactiva</a></li>
+<li><a href="inventario.html">Inventario de equipos</a></li>
+<li><a href="soporte.html" class="active">Soporte técnico</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+
+</ul>
+
+</nav>
+
+
+
+<main class="main-content">
+
+
+<section>
+
+<h2>Levantar reporte de falla</h2>
+
+<form id="form-soporte">
+
+
+<label>ID del dispositivo</label>
+
+<input type="text" name="dispositivo" required placeholder="Ej: Router-Core-01">
+
+
+<label>Correo electrónico</label>
+
+<input type="email" name="correo" required>
+
+
+<label>PIN de acceso técnico</label>
+
+<input type="password" name="pin" required maxlength="6">
+
+
+<label>Tipo de incidencia</label>
+
+<input type="radio" name="tipo" value="hardware"> Hardware
+
+<input type="radio" name="tipo" value="software"> Software / Configuración
+
+
+<label>Prioridad</label>
+
+<select name="prioridad">
+
+<option>Alta</option>
+<option>Media</option>
+<option>Baja</option>
+
+</select>
+
+
+<label>Descripción del problema</label>
+
+<textarea name="descripcion" rows="4"></textarea>
+
+
+<label>
+
+<input type="checkbox" required>
+
+Confirmo que la información es correcta
+
+</label>
+
+
+<button type="submit">Enviar ticket</button>
+
+</form>
+
+</section>
+
+
+</main>
+
+
+
+<aside class="side-panel">
+
+<h3>Ayuda rápida</h3>
+
+<ul>
+
+<li>Verifica energía del equipo</li>
+<li>Confirma IP/MAC en el inventario</li>
+<li>Revisa gateway y VLAN</li>
+
+</ul>
+
+</aside>
+
+
+</div>
+
+
+ <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-title">Sistema de Monitoreo de Red</p>
+            <p>Proyecto académico - Programación Web</p>
+            <p>Instituto Tecnológico de Morelia</p>
+            <p>© 2026 Bryan Mendoza. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

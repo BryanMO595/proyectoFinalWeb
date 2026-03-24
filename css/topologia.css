@@ -1,0 +1,28 @@
+.topology-map {
+    margin-top: 18px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.topology-map img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.legend .status {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+}
+
+.side-panel h3 {
+    margin-top: 18px;
+}
+
+.side-panel h3:first-child {
+    margin-top: 0;
+}

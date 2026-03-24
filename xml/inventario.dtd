@@ -1,0 +1,11 @@
+<!ELEMENT inventario (dispositivo+)>
+
+<!ELEMENT dispositivo (id, nombre, ip, mac, tipo, estado, ubicacion)>
+
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT ip (#PCDATA)>
+<!ELEMENT mac (#PCDATA)>
+<!ELEMENT tipo (#PCDATA)>
+<!ELEMENT estado (#PCDATA)>
+<!ELEMENT ubicacion (#PCDATA)>

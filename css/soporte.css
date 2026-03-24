@@ -1,0 +1,27 @@
+form {
+    max-width: 850px;
+}
+
+form button[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.side-panel ul {
+    list-style: decimal;
+    padding-left: 20px;
+}
+
+.side-panel ul li {
+    margin-bottom: 10px;
+}
+
+form label input[type="checkbox"] {
+    width: auto;
+}
+
+form input[type="radio"] {
+    width: auto;
+    margin-top: 10px;
+}

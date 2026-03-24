@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Topología de red</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/topologia.css" />
+<link rel="stylesheet" href="css/tailwind.css" />
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+<h1>Topología interactiva de red</h1>
+<p>Visualización didáctica de nodos y enlaces</p>
+</header>
+
+
+
+<div class="container">
+
+
+<nav class="sidebar">
+
+<ul>
+
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="topologia.html" class="active">Topología interactiva</a></li>
+<li><a href="inventario.html">Inventario de equipos</a></li>
+<li><a href="soporte.html">Soporte técnico</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+
+</ul>
+
+</nav>
+
+
+
+<main class="main-content">
+
+
+<section>
+
+<h2>Mapa lógico de la infraestructura</h2>
+
+<p>
+Representación visual de la red basada en el diseño
+(routing / switching / dispositivos finales).
+</p>
+
+<div class="topology-map">
+
+<img src="img/networkTopology.png" alt="Diagrama de red" width="100">
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Leyenda de estados</h2>
+
+<ul class="legend">
+
+<li><span class="status online"></span>🟢 Online</li>
+<li><span class="status offline"></span>🔴 Offline</li>
+<li><span class="status warning"></span>🟡 Degradación</li>
+
+</ul>
+
+</section>
+
+
+</main>
+
+
+
+<aside class="side-panel">
+
+<h3>Filtros de vista</h3>
+
+<ul>
+
+<li>Capa 2 (switching)</li>
+<li>Capa 3 (routing)</li>
+<li>Dispositivos finales</li>
+
+</ul>
+
+
+<h3>Tip didáctico</h3>
+
+<p>
+Si un nodo está offline revisa primero
+energía y cableado antes de revisar configuración.
+</p>
+
+</aside>
+
+
+</div>
+
+
+
+ <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-title">Sistema de Monitoreo de Red</p>
+            <p>Proyecto académico - Programación Web</p>
+            <p>Instituto Tecnológico de Morelia</p>
+            <p>© 2026 Bryan Mendoza. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
