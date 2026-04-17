@@ -1,116 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Contacto</title>
-
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/contacto.css" />
-<link rel="stylesheet" href="css/tailwind.css" />
-
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/tailwind.css">
 </head>
 
+<body class="min-h-screen bg-slate-950 text-slate-100">
 
-<body>
+    <header class="header">
+        <h1 class="text-3xl font-bold text-cyan-400">Información de contacto</h1>
+        <p>Desarrollador del sistema de monitoreo</p>
+    </header>
 
+    <div class="grid grid-cols-1 gap-6 p-6 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
 
-<header class="header">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="topologia.html">Topología interactiva</a></li>
+                <li><a href="inventario.html">Inventario de equipos</a></li>
+                <li><a href="soporte.html">Soporte técnico</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
 
-<h1>Información de contacto</h1>
+        <main class="main-content space-y-6">
 
-<p>Desarrollador del sistema de monitoreo</p>
+            <section class="profile">
+                <h2>Bryan — Ingeniería en Sistemas Computacionales</h2>
 
-</header>
+                <p>
+                    Estudiante del Tecnológico de Morelia, interesado en redes,
+                    monitoreo de infraestructura y desarrollo de software.
+                </p>
 
+                <h3>Datos principales</h3>
 
+                <ul>
+                    <li>Morelia, Michoacán, México</li>
+                    <li>Email: l23121066@morelia.tecnm.mx</li>
+                </ul>
+            </section>
 
-<div class="container">
+            <section>
+                <h3>Perfiles profesionales</h3>
 
+                <ul>
+                    <li>
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                            GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/bryan-mendoza-82361b229/" target="_blank" rel="noopener noreferrer">
+                            LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </section>
 
-<nav class="sidebar">
+            <section class="card">
+                <h3>Acerca del proyecto</h3>
+                <p>
+                    Este sistema fue desarrollado como parte de la materia de Programación Web,
+                    con el objetivo de mostrar de forma visual e interactiva información clave
+                    sobre dispositivos, topología, incidencias y monitoreo básico de una red LAN.
+                </p>
+            </section>
 
-<ul>
+        </main>
 
-<li><a href="index.html">Dashboard</a></li>
-<li><a href="topologia.html">Topología interactiva</a></li>
-<li><a href="inventario.html">Inventario de equipos</a></li>
-<li><a href="soporte.html">Soporte técnico</a></li>
-<li><a href="contacto.html" class="active">Contacto</a></li>
+        <aside class="side-panel">
+            <h3>Ubicación</h3>
+            <p>Instituto Tecnológico de Morelia</p>
+            <p>Laboratorio de Sistemas</p>
 
-</ul>
+            <h3>Disponibilidad</h3>
+            <p class="status online">Disponible</p>
 
-</nav>
+            <h3>Acceso rápido</h3>
+            <a href="soporte.html" class="btn">Ir a soporte</a>
+            <a href="inventario.html" class="btn secondary">Ver inventario</a>
+        </aside>
 
+    </div>
 
-
-<main class="main-content">
-
-
-<section class="profile">
-
-<h2>Bryan — Ingeniería en Sistemas Computacionales</h2>
-
-<p>
-Estudiante del Tecnológico de Morelia,
-interesado en redes, monitoreo de infraestructura
-y desarrollo de software.
-</p>
-
-
-<h3>Datos principales</h3>
-
-<ul>
-
-<li>Morelia, Michoacán, México</li>
-<li>Email: l23121066@morelia.tecnm.mx</li>
-
-</ul>
-
-</section>
-
-
-
-<section>
-
-<h3>Perfiles profesionales</h3>
-
-<ul>
-
-<li><a href="https://github.com/" target="_blank">GitHub</a></li>
-<li><a href="https://www.linkedin.com/in/bryan-mendoza-82361b229/" target="_blank">LinkedIn</a></li>
-
-</ul>
-
-</section>
-
-
-</main>
-
-
-
-<aside class="side-panel">
-
-<h3>Ubicación</h3>
-
-<p>Instituto Tecnológico de Morelia</p>
-
-<p>Laboratorio de Sistemas</p>
-
-<h3>Disponibilidad</h3>
-
-<p class="status online">Disponible</p>
-
-</aside>
-
-
-</div>
-
-
-
- <footer class="footer">
+    <footer class="footer">
         <div class="footer-content">
             <p class="footer-title">Sistema de Monitoreo de Red</p>
             <p>Proyecto académico - Programación Web</p>
@@ -118,7 +98,6 @@ y desarrollo de software.
             <p>© 2026 Bryan Mendoza. Todos los derechos reservados.</p>
         </div>
     </footer>
-
 
 </body>
 </html>

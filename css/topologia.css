@@ -1,16 +1,85 @@
-.topology-map {
+.topology-diagram-card {
     margin-top: 18px;
-    background-color: var(--bg-card);
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.96));
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 18px;
     box-shadow: var(--shadow);
     overflow: hidden;
 }
 
-.topology-map img {
-    width: 50%;
-    border-radius: 10px;
+.topology-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    background:
+        radial-gradient(circle at center, rgba(59, 130, 246, 0.08), transparent 40%),
+        rgba(2, 6, 23, 0.95);
+}
+
+.topology-link {
+    stroke: rgba(96, 165, 250, 0.65);
+    stroke-width: 3;
+}
+
+.topology-node {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.topology-node.selected .node-shape {
+    stroke: #60a5fa;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 16px rgba(96, 165, 250, 0.7));
+}
+
+.node-shape {
+    stroke-width: 2;
+    transition: transform 0.2s ease, stroke 0.2s ease, filter 0.2s ease;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.topology-node:hover .node-shape {
+    transform: scale(1.04);
+}
+
+.topology-node.selected .node-shape {
+    stroke: #60a5fa;
+    filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.45));
+}
+
+.node-label {
+    fill: #e5e7eb;
+    font-size: 16px;
+    font-weight: 600;
+    text-anchor: middle;
+}
+
+.node-subtext {
+    fill: #94a3b8;
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+.node-online {
+    fill: rgba(16, 185, 129, 0.22);
+    stroke: #34d399;
+}
+
+.node-offline {
+    fill: rgba(239, 68, 68, 0.18);
+    stroke: #f87171;
+}
+
+.node-warning {
+    fill: rgba(245, 158, 11, 0.18);
+    stroke: #fbbf24;
+}
+
+.node-hidden {
+    opacity: 0.15;
 }
 
 .legend .status {
@@ -25,4 +94,89 @@
 
 .side-panel h3:first-child {
     margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .node-label {
+        font-size: 13px;
+    }
+
+    .node-subtext {
+        font-size: 10px;
+    }
+}
+
+.device-icon-body {
+    fill: rgba(30, 41, 59, 0.95);
+    stroke: #cbd5e1;
+    stroke-width: 1.8;
+}
+
+.device-icon-screen {
+    fill: rgba(59, 130, 246, 0.28);
+    stroke: #93c5fd;
+    stroke-width: 1.2;
+}
+
+.device-icon-port {
+    fill: #93c5fd;
+    opacity: 0.95;
+}
+
+.device-icon-light {
+    fill: #34d399;
+}
+
+.device-icon-stroke {
+    fill: none;
+    stroke: #93c5fd;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+/* Glow al hacer hover */
+.topology-node:hover .node-shape {
+    filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.6));
+}
+
+/* Selección más fuerte */
+.topology-node.selected .node-shape {
+    stroke: #60a5fa;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.8));
+}
+
+/* Líneas más elegantes */
+.topology-link {
+    stroke: rgba(96, 165, 250, 0.5);
+    stroke-width: 2.5;
+    transition: all 0.3s ease;
+}
+
+/* Animación ligera */
+.topology-link {
+    stroke-dasharray: 6;
+    animation: flow 2s linear infinite;
+}
+
+@keyframes flow {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 12; }
+}
+
+.topology-node {
+    cursor: pointer;
+}
+
+.node-label {
+    fill: #e5e7eb;
+    font-size: 14px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.node-subtext {
+    fill: #94a3b8;
+    font-size: 11px;
+    text-anchor: middle;
 }
