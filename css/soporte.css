@@ -1,5 +1,5 @@
 form {
-    max-width: 850px;
+    max-width: 100%;
 }
 
 form button[type="submit"] {
@@ -24,4 +24,34 @@ form label input[type="checkbox"] {
 form input[type="radio"] {
     width: auto;
     margin-top: 10px;
+}
+
+.support-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.support-form-card,
+.support-tickets-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+.ticket-card {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 1100px) {
+    .support-layout {
+        grid-template-columns: 1fr;
+    }
 }

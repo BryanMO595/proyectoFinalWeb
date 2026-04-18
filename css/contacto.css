@@ -22,3 +22,44 @@
 .side-panel .status {
     font-size: 1rem;
 }
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.contact-form-card,
+.contact-messages-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+.contact-message-card {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form-card form input,
+.contact-form-card form textarea,
+.contact-form-card form select {
+    width: 100%;
+}
+
+.contact-form-card form button[type="submit"] {
+    width: 100%;
+    font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}

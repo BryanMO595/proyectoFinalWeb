@@ -31,7 +31,7 @@
 
         <main class="main-content space-y-6">
 
-            <section class="profile">
+            <section class="profile card">
                 <h2>Bryan — Ingeniería en Sistemas Computacionales</h2>
 
                 <p>
@@ -47,7 +47,7 @@
                 </ul>
             </section>
 
-            <section>
+            <section class="card">
                 <h3>Perfiles profesionales</h3>
 
                 <ul>
@@ -73,6 +73,79 @@
                 </p>
             </section>
 
+            <div class="contact-layout">
+                <section class="contact-form-card">
+                    <h3>Enviar mensaje</h3>
+
+                    <form id="form-contacto" class="space-y-5">
+                        <div>
+                            <label for="nombre-contacto" class="mb-2 block">Nombre</label>
+                            <input
+                                type="text"
+                                id="nombre-contacto"
+                                name="nombre"
+                                required
+                                placeholder="Tu nombre completo"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="correo-contacto" class="mb-2 block">Correo electrónico</label>
+                            <input
+                                type="email"
+                                id="correo-contacto"
+                                name="correo"
+                                required
+                                placeholder="ejemplo@correo.com"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="tipo-consulta" class="mb-2 block">Tipo de consulta</label>
+                            <select
+                                id="tipo-consulta"
+                                name="tipo"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            >
+                                <option value="Académica">Académica</option>
+                                <option value="Soporte">Soporte</option>
+                                <option value="Colaboración">Colaboración</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="mensaje-contacto" class="mb-2 block">Mensaje</label>
+                            <textarea
+                                id="mensaje-contacto"
+                                name="mensaje"
+                                rows="5"
+                                maxlength="300"
+                                placeholder="Escribe tu mensaje aquí..."
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            ></textarea>
+                            <small id="contador-mensaje" class="mt-2 block text-slate-400">0 / 300 caracteres</small>
+                        </div>
+
+                        <label class="flex items-center gap-3">
+                            <input type="checkbox" id="confirmacion-contacto" required>
+                            Confirmo que la información es correcta
+                        </label>
+
+                        <button type="submit" class="btn w-full">Enviar mensaje</button>
+
+                        <div id="contacto-mensaje"></div>
+                    </form>
+                </section>
+
+                <section class="contact-messages-card">
+                    <h3>Mensajes enviados</h3>
+                    <div id="contact-messages-list" class="space-y-4"></div>
+                </section>
+            </div>
+
         </main>
 
         <aside class="side-panel">
@@ -86,6 +159,11 @@
             <h3>Acceso rápido</h3>
             <a href="soporte.html" class="btn">Ir a soporte</a>
             <a href="inventario.html" class="btn secondary">Ver inventario</a>
+
+            <h3>Actividad del sistema</h3>
+            <p>Mensajes guardados: <span id="contact-total-messages">0</span></p>
+            <p>Tickets abiertos: <span id="contact-open-tickets">0</span></p>
+            <p>Dispositivos monitoreados: <span id="contact-total-devices">0</span></p>
         </aside>
 
     </div>
@@ -99,5 +177,7 @@
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
+    <script src="js/contacto.js"></script>
 </body>
 </html>

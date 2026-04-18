@@ -31,101 +31,105 @@
 
         <main class="main-content space-y-6">
 
-            <section>
-                <h2>Levantar reporte de falla</h2>
+            <div class="support-layout">
 
-                <form id="form-soporte" class="space-y-5">
-                    <div>
-                        <label for="dispositivo" class="mb-2 block">ID del dispositivo</label>
-                        <input
-                            type="text"
-                            id="dispositivo"
-                            name="dispositivo"
-                            required
-                            placeholder="Ej: Router-Core-01"
-                            class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                        >
-                    </div>
+                <section class="support-form-card">
+                    <h2>Levantar reporte de falla</h2>
 
-                    <div>
-                        <label for="correo" class="mb-2 block">Correo electrónico</label>
-                        <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            required
-                            class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                        >
-                    </div>
-
-                    <div>
-                        <label for="pin" class="mb-2 block">PIN de acceso técnico</label>
-                        <input
-                            type="password"
-                            id="pin"
-                            name="pin"
-                            required
-                            maxlength="6"
-                            class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                        >
-                    </div>
-
-                    <div>
-                        <p class="mb-2">Tipo de incidencia</p>
-
-                        <div class="flex flex-col gap-3 sm:flex-row">
-                            <label class="flex items-center gap-2">
-                                <input type="radio" name="tipo" value="hardware" required>
-                                Hardware
-                            </label>
-
-                            <label class="flex items-center gap-2">
-                                <input type="radio" name="tipo" value="software" required>
-                                Software / Configuración
-                            </label>
+                    <form id="form-soporte" class="space-y-5">
+                        <div>
+                            <label for="dispositivo" class="mb-2 block">ID del dispositivo</label>
+                            <input
+                                type="text"
+                                id="dispositivo"
+                                name="dispositivo"
+                                required
+                                placeholder="Ej: Router-Core-01"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            >
                         </div>
-                    </div>
 
-                    <div>
-                        <label for="prioridad" class="mb-2 block">Prioridad</label>
-                        <select
-                            id="prioridad"
-                            name="prioridad"
-                            class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                        >
-                            <option>Alta</option>
-                            <option>Media</option>
-                            <option>Baja</option>
-                        </select>
-                    </div>
+                        <div>
+                            <label for="correo" class="mb-2 block">Correo electrónico</label>
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                required
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            >
+                        </div>
 
-                    <div>
-                        <label for="descripcion" class="mb-2 block">Descripción del problema</label>
-                        <textarea
-                            id="descripcion"
-                            name="descripcion"
-                            rows="4"
-                            maxlength="250"
-                            class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                        ></textarea>
-                        <small id="contador-descripcion" class="mt-2 block text-slate-400">0 / 250 caracteres</small>
-                    </div>
+                        <div>
+                            <label for="pin" class="mb-2 block">PIN de acceso técnico</label>
+                            <input
+                                type="password"
+                                id="pin"
+                                name="pin"
+                                required
+                                maxlength="6"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            >
+                        </div>
 
-                    <label class="flex items-center gap-3">
-                        <input type="checkbox" id="confirmacion" required>
-                        Confirmo que la información es correcta
-                    </label>
+                        <div>
+                            <p class="mb-2">Tipo de incidencia</p>
 
-                    <button type="submit" class="btn w-full">Enviar ticket</button>
+                            <div class="flex flex-col gap-3 sm:flex-row">
+                                <label class="flex items-center gap-2">
+                                    <input type="radio" name="tipo" value="hardware" required>
+                                    Hardware
+                                </label>
 
-                    <div id="soporte-mensaje"></div>
-                </form>
-            </section>
+                                <label class="flex items-center gap-2">
+                                    <input type="radio" name="tipo" value="software" required>
+                                    Software / Configuración
+                                </label>
+                            </div>
+                        </div>
 
-            <section>
-                <h2>Tickets generados</h2>
-                <div id="tickets-list" class="space-y-4"></div>
-            </section>
+                        <div>
+                            <label for="prioridad" class="mb-2 block">Prioridad</label>
+                            <select
+                                id="prioridad"
+                                name="prioridad"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            >
+                                <option>Alta</option>
+                                <option>Media</option>
+                                <option>Baja</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="descripcion" class="mb-2 block">Descripción del problema</label>
+                            <textarea
+                                id="descripcion"
+                                name="descripcion"
+                                rows="4"
+                                maxlength="250"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+                            ></textarea>
+                            <small id="contador-descripcion" class="mt-2 block text-slate-400">0 / 250 caracteres</small>
+                        </div>
+
+                        <label class="flex items-center gap-3">
+                            <input type="checkbox" id="confirmacion" required>
+                            Confirmo que la información es correcta
+                        </label>
+
+                        <button type="submit" class="btn w-full">Enviar ticket</button>
+
+                        <div id="soporte-mensaje"></div>
+                    </form>
+                </section>
+
+                <section class="support-tickets-card">
+                    <h2>Tickets generados</h2>
+                    <div id="tickets-list" class="space-y-4"></div>
+                </section>
+
+            </div>
 
         </main>
 

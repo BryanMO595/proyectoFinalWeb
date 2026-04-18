@@ -22,3 +22,50 @@ table td.status {
 .main-content section ul li {
     margin-bottom: 8px;
 }
+
+.inventory-row {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.inventory-row:hover {
+    background-color: rgba(59, 130, 246, 0.08);
+}
+
+.inventory-row td {
+    vertical-align: middle;
+}
+
+.status-cell {
+    font-weight: 600;
+}
+
+#inventory-summary {
+    margin-top: 4px;
+    margin-bottom: 14px;
+}
+
+.status-select {
+    min-width: 170px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    background-color: rgba(59, 130, 246, 0.14);
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.status-select:hover {
+    border-color: rgba(96, 165, 250, 0.55);
+    background-color: rgba(59, 130, 246, 0.22);
+}
+
+.status-select:focus {
+    border-color: rgba(96, 165, 250, 0.8);
+}
+
+.status-select option {
+    background-color: #1e293b;
+    color: #ffffff;
+}

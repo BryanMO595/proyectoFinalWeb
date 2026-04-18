@@ -66,6 +66,8 @@
                     <div id="mensaje" class="flex-1"></div>
                 </div>
 
+                <p id="inventory-summary" class="mb-4 text-sm text-slate-400"></p>
+
                 <div class="overflow-x-auto rounded-xl border border-slate-800">
                     <table class="w-full">
                         <thead>
@@ -81,7 +83,7 @@
                         </thead>
 
                         <tbody id="tabla-dispositivos">
-                            <!-- Aquí inserta el contenido inventario.js -->
+                            <!-- inventario.js inserta el contenido -->
                         </tbody>
                     </table>
                 </div>
@@ -124,14 +126,5 @@
 
     <script src="js/main.js"></script>
     <script src="js/inventario.js"></script>
-    <script>
-        const actualizarPanel = document.getElementById("actualizar-panel");
-        if (actualizarPanel) {
-            actualizarPanel.addEventListener("click", () => {
-                const principal = document.getElementById("actualizar");
-                if (principal) principal.click();
-            });
-        }
-    </script>
 </body>
 </html>
