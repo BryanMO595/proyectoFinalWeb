@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: network_monitor_db
+    restart: always
+    environment:
+      POSTGRES_DB: network_monitor
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5432:5432"
+    volumes:
+      - network_monitor_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    container_name: network_monitor_backend
+    restart: always
+    depends_on:
+      - db
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: network_monitor
+      DB_USER: postgres
+      DB_PASSWORD: postgres123
+      JWT_SECRET: network_monitor_super_secret_key   # 🔐 agregado
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npm run dev
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: network_monitor_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  network_monitor_data:
+  pgadmin_data:
