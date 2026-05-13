@@ -6,6 +6,7 @@ const authRoutes = require("./routes/authRoutes");
 const deviceRoutes = require("./routes/deviceRoutes");
 const ticketRoutes = require("./routes/ticketRoutes");
 const contactMessageRoutes = require("./routes/contactMessageRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 const { verifyToken } = require("./middleware/authMiddleware");
 
@@ -43,5 +44,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/devices", verifyToken, deviceRoutes);
 app.use("/api/tickets", verifyToken, ticketRoutes);
 app.use("/api/contact-messages", verifyToken, contactMessageRoutes);
+app.use("/api/users", userRoutes);
 
 module.exports = app;

@@ -18,6 +18,14 @@ async function getUserById(id) {
   return result.rows[0];
 }
 
+async function getAllUsers() {
+  const result = await pool.query(
+    "SELECT id, nombre, email, rol, created_at FROM usuarios ORDER BY id ASC"
+  );
+
+  return result.rows;
+}
+
 async function createUser(user) {
   const { nombre, email, password, rol } = user;
 
@@ -31,8 +39,49 @@ async function createUser(user) {
   return result.rows[0];
 }
 
+async function updateUser(id, user) {
+  const { nombre, email, rol } = user;
+
+  const result = await pool.query(
+    `UPDATE usuarios
+     SET nombre = $1, email = $2, rol = $3
+     WHERE id = $4
+     RETURNING id, nombre, email, rol, created_at`,
+    [nombre, email, rol, id]
+  );
+
+  return result.rows[0];
+}
+
+async function updateUserPassword(id, hashedPassword) {
+  const result = await pool.query(
+    `UPDATE usuarios
+     SET password = $1
+     WHERE id = $2
+     RETURNING id, nombre, email, rol, created_at`,
+    [hashedPassword, id]
+  );
+
+  return result.rows[0];
+}
+
+async function deleteUser(id) {
+  const result = await pool.query(
+    `DELETE FROM usuarios
+     WHERE id = $1
+     RETURNING id, nombre, email, rol, created_at`,
+    [id]
+  );
+
+  return result.rows[0];
+}
+
 module.exports = {
   getUserByEmail,
   getUserById,
+  getAllUsers,
   createUser,
+  updateUser,
+  updateUserPassword,
+  deleteUser,
 };
