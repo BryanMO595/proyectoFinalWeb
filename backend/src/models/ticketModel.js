@@ -30,9 +30,49 @@ async function createTicket(ticket) {
   return result.rows[0];
 }
 
+async function updateTicket(id, ticket) {
+  const { dispositivo, correo, tipo, prioridad, descripcion, estado } = ticket;
+
+  const result = await pool.query(
+    `UPDATE tickets
+     SET dispositivo = $1,
+         correo = $2,
+         tipo = $3,
+         prioridad = $4,
+         descripcion = $5,
+         estado = $6
+     WHERE id = $7
+     RETURNING *`,
+    [dispositivo, correo, tipo, prioridad, descripcion, estado, id]
+  );
+
+  return result.rows[0];
+}
+
+async function updateTicketStatus(id, estado) {
+  const result = await pool.query(
+    `UPDATE tickets
+     SET estado = $1
+     WHERE id = $2
+     RETURNING *`,
+    [estado, id]
+  );
+
+  return result.rows[0];
+}
+
 async function closeTicket(id) {
   const result = await pool.query(
     "UPDATE tickets SET estado = 'Cerrado' WHERE id = $1 RETURNING *",
+    [id]
+  );
+
+  return result.rows[0];
+}
+
+async function deleteTicket(id) {
+  const result = await pool.query(
+    "DELETE FROM tickets WHERE id = $1 RETURNING *",
     [id]
   );
 
@@ -43,5 +83,8 @@ module.exports = {
   getAllTickets,
   getTicketById,
   createTicket,
+  updateTicket,
+  updateTicketStatus,
   closeTicket,
+  deleteTicket,
 };

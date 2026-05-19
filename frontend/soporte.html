@@ -1,163 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte técnico</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soporte técnico</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/soporte.css">
-    <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/soporte.css">
+  <link rel="stylesheet" href="css/tailwind.css">
 </head>
 
 <body class="min-h-screen bg-slate-950 text-slate-100">
 
-    <header class="header">
-        <h1 class="text-3xl font-bold text-cyan-400">Soporte técnico y reporte de incidencias</h1>
-        <p>Centro de atención para fallos de infraestructura</p>
-    </header>
+  <header class="header">
+    <h1 class="text-3xl font-bold text-cyan-400">Soporte técnico y tickets</h1>
+    <p>Gestión profesional de incidencias de infraestructura</p>
+  </header>
 
-    <div class="grid grid-cols-1 gap-6 p-6 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
+  <div class="grid grid-cols-1 gap-6 p-6 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
 
-        <nav class="sidebar">
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="topologia.html">Topología interactiva</a></li>
-                <li><a href="inventario.html">Inventario de equipos</a></li>
-                <li><a href="soporte.html" class="active">Soporte técnico</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="topologia.html">Topología interactiva</a></li>
+        <li><a href="inventario.html">Inventario de equipos</a></li>
+        <li><a href="soporte.html" class="active">Soporte técnico</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-        <main class="main-content space-y-6">
+    <main class="main-content space-y-6">
 
-            <div class="support-layout">
+      <section>
+        <h2>Registrar / editar ticket</h2>
 
-                <section class="support-form-card">
-                    <h2>Levantar reporte de falla</h2>
+        <form id="ticket-form" class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <input type="text" id="ticket-device" placeholder="Dispositivo. Ej: Router-Core-01" required>
 
-                    <form id="form-soporte" class="space-y-5">
-                        <div>
-                            <label for="dispositivo" class="mb-2 block">ID del dispositivo</label>
-                            <input
-                                type="text"
-                                id="dispositivo"
-                                name="dispositivo"
-                                required
-                                placeholder="Ej: Router-Core-01"
-                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                            >
-                        </div>
+          <input type="email" id="ticket-email" placeholder="Correo electrónico" required>
 
-                        <div>
-                            <label for="correo" class="mb-2 block">Correo electrónico</label>
-                            <input
-                                type="email"
-                                id="correo"
-                                name="correo"
-                                required
-                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                            >
-                        </div>
+          <select id="ticket-type" required>
+            <option value="">Tipo de incidencia</option>
+            <option value="hardware">Hardware</option>
+            <option value="software">Software / Configuración</option>
+          </select>
 
-                        <div>
-                            <label for="pin" class="mb-2 block">PIN de acceso técnico</label>
-                            <input
-                                type="password"
-                                id="pin"
-                                name="pin"
-                                required
-                                maxlength="6"
-                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                            >
-                        </div>
+          <select id="ticket-priority" required>
+            <option value="">Prioridad</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
 
-                        <div>
-                            <p class="mb-2">Tipo de incidencia</p>
+          <select id="ticket-status">
+            <option value="Abierto">Abierto</option>
+            <option value="Cerrado">Cerrado</option>
+          </select>
 
-                            <div class="flex flex-col gap-3 sm:flex-row">
-                                <label class="flex items-center gap-2">
-                                    <input type="radio" name="tipo" value="hardware" required>
-                                    Hardware
-                                </label>
+          <textarea
+            id="ticket-description"
+            placeholder="Describe el problema con detalle..."
+            class="md:col-span-2"
+            rows="5"
+            required
+          ></textarea>
 
-                                <label class="flex items-center gap-2">
-                                    <input type="radio" name="tipo" value="software" required>
-                                    Software / Configuración
-                                </label>
-                            </div>
-                        </div>
+          <div class="md:col-span-2 flex flex-col gap-3 sm:flex-row">
+            <button type="submit" id="ticket-submit-btn" class="btn">
+              Registrar ticket
+            </button>
 
-                        <div>
-                            <label for="prioridad" class="mb-2 block">Prioridad</label>
-                            <select
-                                id="prioridad"
-                                name="prioridad"
-                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                            >
-                                <option>Alta</option>
-                                <option>Media</option>
-                                <option>Baja</option>
-                            </select>
-                        </div>
+            <button type="button" id="ticket-clear-btn" class="btn secondary">
+              Limpiar
+            </button>
+          </div>
 
-                        <div>
-                            <label for="descripcion" class="mb-2 block">Descripción del problema</label>
-                            <textarea
-                                id="descripcion"
-                                name="descripcion"
-                                rows="4"
-                                maxlength="250"
-                                class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
-                            ></textarea>
-                            <small id="contador-descripcion" class="mt-2 block text-slate-400">0 / 250 caracteres</small>
-                        </div>
+          <p id="ticket-form-message" class="md:col-span-2"></p>
+        </form>
+      </section>
 
-                        <label class="flex items-center gap-3">
-                            <input type="checkbox" id="confirmacion" required>
-                            Confirmo que la información es correcta
-                        </label>
+      <section>
+        <h2>Tickets generados</h2>
 
-                        <button type="submit" class="btn w-full">Enviar ticket</button>
+        <p class="mb-4 text-slate-400">
+          Los tickets se cargan dinámicamente desde PostgreSQL mediante la API del backend.
+        </p>
 
-                        <div id="soporte-mensaje"></div>
-                    </form>
-                </section>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 mb-4">
+          <input
+            id="ticket-search"
+            type="text"
+            placeholder="Buscar por ticket, dispositivo, correo o descripción..."
+            class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+          >
 
-                <section class="support-tickets-card">
-                    <h2>Tickets generados</h2>
-                    <div id="tickets-list" class="space-y-4"></div>
-                </section>
+          <select
+            id="ticket-status-filter"
+            class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+          >
+            <option value="Todos">Todos los estados</option>
+            <option value="Abierto">Abierto</option>
+            <option value="Cerrado">Cerrado</option>
+          </select>
 
-            </div>
-
-        </main>
-
-        <aside class="side-panel">
-            <h3>Ayuda rápida</h3>
-
-            <ul>
-                <li>Verifica energía del equipo.</li>
-                <li>Confirma IP/MAC en el inventario.</li>
-                <li>Revisa gateway y VLAN.</li>
-            </ul>
-
-            <h3>Tip operativo</h3>
-            <p>Describe el problema con el mayor detalle posible para agilizar el diagnóstico.</p>
-        </aside>
-
-    </div>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-title">Sistema de Monitoreo de Red</p>
-            <p>Proyecto académico - Programación Web</p>
-            <p>Instituto Tecnológico de Morelia</p>
-            <p>© 2026 Bryan Mendoza. Todos los derechos reservados.</p>
+          <select
+            id="ticket-priority-filter"
+            class="w-full rounded-xl border border-slate-700 bg-slate-800 p-3 text-white outline-none"
+          >
+            <option value="Todas">Todas las prioridades</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
         </div>
-    </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/soporte.js"></script>
+        <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <button id="refresh-tickets" class="btn" type="button">Sincronizar tickets</button>
+        </div>
+
+        <p id="tickets-counter" class="mb-4 text-sm text-slate-400">
+          Cargando tickets...
+        </p>
+
+        <div id="tickets-container" class="grid grid-cols-1 gap-4">
+          <!-- soporte.js inserta tickets desde backend -->
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="side-panel">
+      <h3>Ayuda rápida</h3>
+
+      <ol>
+        <li>Verifica energía del equipo.</li>
+        <li>Confirma IP/MAC en inventario.</li>
+        <li>Revisa gateway y VLAN.</li>
+      </ol>
+
+      <h3>Acciones rápidas</h3>
+
+      <button id="refresh-tickets-panel" type="button" class="btn secondary">
+        Sincronizar tickets
+      </button>
+
+      <button onclick="logout()" class="btn secondary">Cerrar sesión</button>
+    </aside>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-title">Sistema de Monitoreo de Red</p>
+      <p>Proyecto académico - Programación Web</p>
+      <p>Instituto Tecnológico de Morelia</p>
+      <p>© 2026 Bryan Mendoza. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/soporte.js"></script>
 </body>
 </html>
