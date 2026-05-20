@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const pool = require("./config/db");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 
 const authRoutes = require("./routes/authRoutes");
 const deviceRoutes = require("./routes/deviceRoutes");
@@ -45,5 +46,6 @@ app.use("/api/devices", verifyToken, deviceRoutes);
 app.use("/api/tickets", verifyToken, ticketRoutes);
 app.use("/api/contact-messages", verifyToken, contactMessageRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/dashboard", verifyToken, dashboardRoutes);
 
 module.exports = app;
