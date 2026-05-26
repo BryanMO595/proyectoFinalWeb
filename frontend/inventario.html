@@ -139,9 +139,49 @@
     <aside class="side-panel">
       <h3>Acciones rápidas</h3>
 
-      <button id="refresh-devices-panel" type="button" class="btn secondary">
-        Sincronizar vista
-      </button>
+      <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+
+  <button id="refresh-devices" class="btn" type="button">
+    Sincronizar vista
+  </button>
+
+  <button id="export-devices-csv" class="btn secondary" type="button">
+    Exportar CSV
+  </button>
+
+  <button id="export-devices-pdf" class="btn secondary" type="button">
+    Exportar PDF
+  </button>
+
+  <button class="btn theme-toggle" type="button">
+    Modo claro
+  </button>
+
+  <div id="ping-result-panel" class="ping-panel hidden">
+  <div>
+    <h3 id="ping-device-name">Resultado de ping</h3>
+    <p id="ping-device-ip">IP: --</p>
+  </div>
+
+  <div class="ping-metrics">
+    <div>
+      <span>Estado</span>
+      <strong id="ping-status">--</strong>
+    </div>
+
+    <div>
+      <span>Latencia</span>
+      <strong id="ping-latency">-- ms</strong>
+    </div>
+
+    <div>
+      <span>Última prueba</span>
+      <strong id="ping-checked-at">--</strong>
+    </div>
+  </div>
+</div>
+
+</div>
 
       <h3>Tips de validación</h3>
       <p>Verifica que la IP, gateway y segmento de red correspondan a la misma subred.</p>
@@ -160,8 +200,13 @@
     </div>
   </footer>
 
-  <script src="js/api.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/inventario.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/export.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/inventario.js"></script>
 </body>
 </html>

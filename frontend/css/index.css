@@ -100,3 +100,15 @@
         gap: 10px;
     }
 }
+.charts-section {
+  margin-top: 1.5rem;
+}
+
+.chart-card {
+  min-height: 340px;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: 260px !important;
+}

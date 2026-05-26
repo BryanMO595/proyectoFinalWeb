@@ -140,9 +140,23 @@
 
       <h3>Acciones rápidas</h3>
 
-      <button id="refresh-tickets-panel" type="button" class="btn secondary">
-        Sincronizar tickets
-      </button>
+      <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+  <button id="refresh-tickets-panel" class="btn" type="button">
+  Sincronizar tickets
+</button>
+
+  <button id="export-tickets-csv" class="btn secondary" type="button">
+    Exportar CSV
+  </button>
+
+  <button id="export-tickets-pdf" class="btn secondary" type="button">
+    Exportar PDF
+  </button>
+</div>
+
+<button class="btn theme-toggle" type="button">
+    Modo claro
+  </button>
 
       <button onclick="logout()" class="btn secondary">Cerrar sesión</button>
     </aside>
@@ -158,8 +172,14 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script src="js/api.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/soporte.js"></script>
+  
 </body>
 </html>

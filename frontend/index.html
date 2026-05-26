@@ -87,6 +87,22 @@
         </div>
       </section>
 
+      <section class="charts-section">
+  <h2>Visualización gráfica del sistema</h2>
+
+  <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+    <article class="card chart-card">
+      <h3>Estado de dispositivos</h3>
+      <canvas id="devices-status-chart"></canvas>
+    </article>
+
+    <article class="card chart-card">
+      <h3>Tickets por estado</h3>
+      <canvas id="tickets-status-chart"></canvas>
+    </article>
+  </div>
+</section>
+
       <section class="network-status">
         <h2>Estado actual de la red</h2>
         <div class="status-list" id="dashboard-devices-list">
@@ -130,6 +146,10 @@
       <a href="inventario.html" class="btn">Ver inventario</a>
       <a href="soporte.html" class="btn secondary">Reportar incidencia</a>
 
+      <button class="btn theme-toggle" type="button">
+    Modo claro
+  </button>
+
       <button onclick="logout()" class="btn secondary" type="button">
         Cerrar sesión
       </button>
@@ -146,8 +166,12 @@
     </div>
   </footer>
 
-  <script src="js/api.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/dashboard.js"></script>
 </body>
 </html>

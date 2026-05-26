@@ -13,6 +13,8 @@ const { verifyToken } = require("./middleware/authMiddleware");
 
 const app = express();
 
+const pingRoutes = require("./routes/pingRoutes");
+
 app.use(cors());
 app.use(express.json());
 
@@ -47,5 +49,6 @@ app.use("/api/tickets", verifyToken, ticketRoutes);
 app.use("/api/contact-messages", verifyToken, contactMessageRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/dashboard", verifyToken, dashboardRoutes);
+app.use("/api", pingRoutes);
 
 module.exports = app;
