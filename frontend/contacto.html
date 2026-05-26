@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contacto.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+</head>
+
+<body class="min-h-screen bg-slate-950 text-slate-100">
+
+  <header class="header">
+    <h1 class="text-3xl font-bold text-cyan-400">Información de contacto</h1>
+    <p>Desarrollador del sistema de monitoreo</p>
+  </header>
+
+  <div class="grid grid-cols-1 gap-6 p-6 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
+
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="topologia.html">Topología interactiva</a></li>
+        <li><a href="inventario.html">Inventario de equipos</a></li>
+        <li><a href="soporte.html">Soporte técnico</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-content space-y-6">
+
+      <section class="card">
+        <h2>Bryan — Ingeniería en Sistemas Computacionales</h2>
+
+        <p>
+          Estudiante del Tecnológico de Morelia, interesado en redes,
+          monitoreo de infraestructura y desarrollo de software.
+        </p>
+
+        <h3>Datos principales</h3>
+        <p>Morelia, Michoacán, México</p>
+        <p>Email: l23121066@morelia.tecnm.mx</p>
+      </section>
+
+      <section class="card">
+        <h2>Perfiles profesionales</h2>
+
+        <p><a href="https://github.com/BryanMO595" class="text-blue-400">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/feed/" class="text-blue-400">LinkedIn</a></p>
+      </section>
+
+      <section class="card">
+        <h2>Acerca del proyecto</h2>
+
+        <p>
+          Este sistema fue desarrollado como parte de la materia de Programación Web.
+          Integra frontend, backend, PostgreSQL, autenticación JWT, roles y módulos
+          para monitoreo básico de infraestructura de red LAN.
+        </p>
+      </section>
+
+      <section class="grid grid-cols-1 gap-6 xl:grid-cols-2">
+
+        <article class="card">
+          <h2>Enviar mensaje</h2>
+
+          <form id="contact-form" class="space-y-4">
+
+            <div>
+              <label for="contact-name">Nombre</label>
+              <input
+                type="text"
+                id="contact-name"
+                placeholder="Tu nombre completo"
+                required
+              >
+            </div>
+
+            <div>
+              <label for="contact-email">Correo electrónico</label>
+              <input
+                type="email"
+                id="contact-email"
+                placeholder="ejemplo@correo.com"
+                required
+              >
+            </div>
+
+            <div>
+              <label for="contact-type">Tipo de consulta</label>
+              <select id="contact-type" required>
+                <option value="">Selecciona tipo</option>
+                <option value="Académica">Académica</option>
+                <option value="Soporte">Soporte</option>
+                <option value="Proyecto">Proyecto</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="contact-message">Mensaje</label>
+              <textarea
+                id="contact-message"
+                rows="6"
+                maxlength="300"
+                placeholder="Escribe tu mensaje aquí..."
+                required
+              ></textarea>
+              <p id="contact-counter" class="text-sm text-slate-400">0 / 300 caracteres</p>
+            </div>
+
+            <button type="submit" class="btn">Enviar mensaje</button>
+
+            <p id="contact-form-message"></p>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Mensajes enviados</h2>
+
+          <div class="mb-4 flex flex-col gap-3 sm:flex-row">
+            <input
+              type="text"
+              id="contact-search"
+              placeholder="Buscar por nombre, correo, tipo o mensaje..."
+            >
+
+            <button id="refresh-messages" type="button" class="btn secondary">
+              Sincronizar
+            </button>
+          </div>
+
+          <p id="messages-counter" class="mb-4 text-sm text-slate-400">
+            Cargando mensajes...
+          </p>
+
+          <div id="messages-container" class="space-y-4">
+            <!-- contacto.js inserta mensajes desde backend -->
+          </div>
+        </article>
+
+      </section>
+
+    </main>
+
+    <aside class="side-panel">
+      <h3>Ubicación</h3>
+      <p>Instituto Tecnológico de Morelia</p>
+      <p>Laboratorio de Sistemas</p>
+
+      <h3>Disponibilidad</h3>
+      <span class="status online">Disponible</span>
+
+      <h3>Acceso rápido</h3>
+      <a href="soporte.html" class="btn">Ir a soporte</a>
+      <a href="inventario.html" class="btn secondary">Ver inventario</a>
+
+      <button class="btn theme-toggle" type="button">
+    Modo claro
+  </button>
+
+      <button onclick="logout()" class="btn secondary" type="button">
+        Cerrar sesión
+      </button>
+
+      <h3>Actividad del sistema</h3>
+      <p>Mensajes guardados: <span id="messages-total-side">0</span></p>
+    </aside>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-title">Sistema de Monitoreo de Red</p>
+      <p>Proyecto académico - Programación Web</p>
+      <p>Instituto Tecnológico de Morelia</p>
+      <p>© 2026 Bryan Mendoza. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/theme.js"></script>
+
+
+  <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+<script src="js/socket.js"></script>
+
+  <script src="js/contacto.js"></script>
+</body>
+</html>

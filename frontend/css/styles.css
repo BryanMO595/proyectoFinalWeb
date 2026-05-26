@@ -428,3 +428,259 @@ textarea {
         padding: 20px 16px;
     }
 }
+
+#toast-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast {
+  min-width: 260px;
+  max-width: 360px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  animation: toastIn 0.25s ease;
+}
+
+.toast-success {
+  background: #15803d;
+}
+
+.toast-error {
+  background: #b91c1c;
+}
+
+.toast-info {
+  background: #2563eb;
+}
+
+.toast-warning {
+  background: #d97706;
+}
+
+.toast-hide {
+  animation: toastOut 0.3s ease forwards;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastOut {
+  to {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+  background: #020617;
+  color: #f1f5f9;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+body.light-mode .header,
+body.light-mode .sidebar,
+body.light-mode .side-panel,
+body.light-mode .card,
+body.light-mode .mini-card,
+body.light-mode .status-item,
+body.light-mode .alert-item,
+body.light-mode .main-content,
+body.light-mode .network-status,
+body.light-mode .alerts,
+body.light-mode .resources {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #94a3b8;
+}
+
+body.light-mode a {
+  color: #2563eb;
+}
+
+/* =========================
+   TRANSICIONES
+========================= */
+
+body,
+.card,
+.sidebar,
+.side-panel,
+.header,
+.main-content,
+.status-item,
+.alert-item,
+.mini-card {
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================
+   THEME SYSTEM
+========================= */
+
+body.light-mode {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .header,
+body.light-mode .sidebar,
+body.light-mode .side-panel,
+body.light-mode .main-content,
+body.light-mode section,
+body.light-mode .card,
+body.light-mode .mini-card,
+body.light-mode .status-item,
+body.light-mode .alert-item,
+body.light-mode .ticket-card,
+body.light-mode .detail-card,
+body.light-mode .topology-map,
+body.light-mode table,
+body.light-mode tbody,
+body.light-mode tr,
+body.light-mode td {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode p,
+body.light-mode span,
+body.light-mode li,
+body.light-mode label,
+body.light-mode strong,
+body.light-mode small,
+body.light-mode th,
+body.light-mode td {
+  color: #0f172a !important;
+}
+
+body.light-mode .text-slate-400,
+body.light-mode .text-slate-300,
+body.light-mode .text-slate-200,
+body.light-mode .text-slate-100 {
+  color: #334155 !important;
+}
+
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #94a3b8 !important;
+}
+
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder {
+  color: #64748b !important;
+}
+
+body.light-mode .sidebar a {
+  color: #1e293b !important;
+}
+
+body.light-mode .sidebar a.active {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+body.light-mode .btn {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+body.light-mode .btn.secondary {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid #94a3b8 !important;
+}
+
+body.light-mode .metric,
+body.light-mode .mini-card p {
+  color: #2563eb !important;
+}
+
+body.light-mode .metric.warning {
+  color: #d97706 !important;
+}
+
+body.light-mode .metric.danger {
+  color: #dc2626 !important;
+}
+
+body.light-mode .metric.success {
+  color: #16a34a !important;
+}
+
+body.light-mode .status.online {
+  background-color: #dcfce7 !important;
+  color: #166534 !important;
+}
+
+body.light-mode .status.offline {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+}
+
+body.light-mode .status.warning {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+body,
+.header,
+.sidebar,
+.side-panel,
+.main-content,
+.card,
+.mini-card,
+.status-item,
+.alert-item,
+.ticket-card,
+.detail-card,
+.topology-map {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}

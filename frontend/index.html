@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Monitoring System</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+</head>
+
+<body class="min-h-screen bg-slate-950 text-slate-100">
+
+  <header class="header">
+    <h1 class="text-3xl font-bold text-cyan-400">Network Monitoring System</h1>
+    <p>Admin: Bryan - Tecnológico de Morelia</p>
+  </header>
+
+  <div class="grid grid-cols-1 gap-6 p-6 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
+
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active">Dashboard</a></li>
+        <li><a href="topologia.html">Topología interactiva</a></li>
+        <li><a href="inventario.html">Inventario de equipos</a></li>
+        <li><a href="soporte.html">Soporte técnico</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-content space-y-6">
+
+      <section class="dashboard">
+        <h2>Resumen del sistema</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Dispositivos activos</h3>
+            <p class="metric" id="devices-online">0</p>
+            <p>Último check: <span id="last-check">--</span></p>
+          </article>
+
+          <article class="card">
+            <h3>Dispositivos offline</h3>
+            <p class="metric warning" id="devices-offline">0</p>
+            <p>Requiere revisión</p>
+          </article>
+
+          <article class="card">
+            <h3>Alertas críticas</h3>
+            <p class="metric danger" id="critical-alerts">0</p>
+            <p>Prioridad alta</p>
+          </article>
+
+          <article class="card">
+            <h3>Disponibilidad</h3>
+            <p class="metric success" id="availability">0%</p>
+            <p>Últimas 24h</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="quick-stats">
+        <h2>Indicadores operativos</h2>
+
+        <div class="mini-cards">
+          <article class="mini-card">
+            <h3>Equipos monitoreados</h3>
+            <p id="total-devices">0</p>
+          </article>
+
+          <article class="mini-card">
+            <h3>Incidencias abiertas</h3>
+            <p id="open-tickets">0</p>
+          </article>
+
+          <article class="mini-card">
+            <h3>Nodos críticos</h3>
+            <p id="critical-nodes">0</p>
+          </article>
+
+          <article class="mini-card">
+            <h3>Cobertura del monitoreo</h3>
+            <p id="monitoring-coverage">0%</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="charts-section">
+  <h2>Visualización gráfica del sistema</h2>
+
+  <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+    <article class="card chart-card">
+      <h3>Estado de dispositivos</h3>
+      <canvas id="devices-status-chart"></canvas>
+    </article>
+
+    <article class="card chart-card">
+      <h3>Tickets por estado</h3>
+      <canvas id="tickets-status-chart"></canvas>
+    </article>
+  </div>
+</section>
+
+      <section class="network-status">
+        <h2>Estado actual de la red</h2>
+        <div class="status-list" id="dashboard-devices-list">
+          <!-- dashboard.js inserta dispositivos desde backend -->
+        </div>
+      </section>
+
+      <section class="alerts">
+        <h2>Alertas recientes</h2>
+        <div id="dashboard-alerts-list">
+          <!-- dashboard.js inserta alertas desde backend -->
+        </div>
+      </section>
+
+      <section class="resources">
+        <h2>Recursos y guías técnicas</h2>
+
+        <article class="card">
+          <h3>Cisco CLI Cheat Sheet</h3>
+          <ul>
+            <li>show ip interface brief</li>
+            <li>show running-config</li>
+            <li>configure terminal</li>
+          </ul>
+        </article>
+      </section>
+
+    </main>
+
+    <aside class="side-panel">
+      <h3>Estado global</h3>
+
+      <p>
+        Servidor principal:
+        <span class="status online" id="global-server-status">Online</span>
+      </p>
+
+      <p id="backup-info">Último backup: --</p>
+      <p id="verification-info">Última verificación: --</p>
+
+      <a href="inventario.html" class="btn">Ver inventario</a>
+      <a href="soporte.html" class="btn secondary">Reportar incidencia</a>
+
+      <button class="btn theme-toggle" type="button">
+    Modo claro
+  </button>
+
+      <button onclick="logout()" class="btn secondary" type="button">
+        Cerrar sesión
+      </button>
+    </aside>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-title">Sistema de Monitoreo de Red</p>
+      <p>Proyecto académico - Programación Web</p>
+      <p>Instituto Tecnológico de Morelia</p>
+      <p>© 2026 Bryan Mendoza. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/theme.js"></script>
+
+
+<script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+<script src="js/socket.js"></script>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
